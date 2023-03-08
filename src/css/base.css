@@ -1,0 +1,377 @@
+:root {
+    --primary: #11385c;
+    --secundary: #18678c;
+    --accent1: #e8c04a;
+    --accent2: #ee7930;
+    --accent3: #85bd30;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    max-width: 1250px;
+    margin: 1.25rem auto;
+
+}
+
+/* Header Styling */
+
+section.headertop {
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #85bd30;
+}
+
+div.logo {
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: row;
+
+}
+
+div.logo img {
+    width: 50px;
+}
+
+section.headings {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 0;
+}
+
+h1 {font-size: 1em;}
+
+/* h2 {font-size: .85em;} */
+
+h2, h3, h4, p, a {font-size: .75em;}
+
+
+/* Navigation Styling */
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav button {
+    margin: .2rem 2vw;
+    background: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--accent2);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    font-size: 1.5rem;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+
+}
+
+nav ul li.active a {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+nav ul li a:hover {
+    background-color: var(--accent1);
+}
+
+nav ul {
+    display: none;
+
+}
+
+nav ul.open {
+    display: block;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--accent3);
+    text-align: center;
+    font-size: .8rem;
+}
+footer nav ul {
+    display: flex;
+    margin: 0;
+    justify-content: space-evenly;
+}
+
+footer nav ul li a{
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* Main Styling */
+
+main.mainContent {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* main.mainContent img {
+    width: 50%;
+} */
+section.welcome {
+    text-align: left;
+    margin:1.5rem;
+}
+
+section.welcome img {
+    width: 50%;
+    float: right;
+    padding: .5rem;
+    margin-top: .5rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.button1 {
+    background-color: var(--accent3);
+    border-radius: 20px;
+    padding: .5rem 1.5rem;
+}
+.yourCart {
+    grid-column: 1/-1;
+    text-align: center;
+    background-color: var(--secundary);
+    color: white;
+    padding: 1rem;
+}
+section.message1 {
+    grid-column: 1/-1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5rem;
+}
+
+.message1 img {
+    width: 50%;
+}
+.smoothies, .masterpiece {
+    background-color: #e8c04a;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.smoothie img{
+    width: 30%;
+}
+
+.masterpiece {
+    grid-column: 1/-1;
+    flex-direction: column;
+}
+
+.masterButton {
+    background-color: #85bd30;
+    padding: 1rem 2rem;
+}
+
+
+.social {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:var(--secundary);
+    padding: 1.5rem 0;
+}
+.socialMedia img{
+    width: 30px;
+    margin: 0 1.5rem;
+}
+.photo4 {
+    display: none;
+}
+
+/* Weather Report*/
+
+.weather {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 3px solid var(--accent3); */
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.weatherSection div {
+    text-align: center;
+    border: 3px solid var(--accent3);
+    margin: .5rem 1rem;
+}
+.weatherSummary {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+.weatherTitle {
+    background-color: #85bd30;
+    color: var(--primary);
+    padding: .5rem 2rem;
+}
+.forecastTitle {
+    grid-column: 1/-1;
+    
+}
+
+.weatherSummary div{
+    align-items: center;
+    text-align: center;
+}
+
+
+/*--- FRESH PAGE STYLING ---*/
+
+.freshMain {
+    margin: 0 auto;
+    text-align: center;  
+}
+
+.pageTitle {
+    color: var(--accent2);
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    text-align: center;
+    background-color: var(--secundary);
+    padding: 1rem;
+}
+
+form fieldset {
+    margin: 1rem auto;
+    border-radius: 10px;
+ 	width: 94%;
+}
+form legend {
+    color: var(--accent2);
+    margin: 0 1rem;
+    padding: 0 .5rem;
+    font-weight: bolder;
+}
+form label.client {
+    display: block;
+    padding-top: 1rem;
+}
+
+form label.client input {
+    /* -webkit-appearance: none; */
+    font-size: 1rem;
+    border: solid 1px #999;
+    border-radius: 2px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(0,0,0,0.1);
+}
+.fruit1, .fruit2, .fruit3 {
+    padding: .75rem;
+}
+
+form button.submitBtn {
+    border: none;
+    background-color: var(--secundary);
+    color: white;
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    width: 100%;
+    max-width: 20rem;
+    text-align: center;
+}
+
+form textarea {
+	font-size: 1rem;
+	padding: 10px;
+}
+
+.fruitSelection {
+    display: flex;
+    flex-direction: column;
+}
+
+.fruitSelection label{
+    padding: .5rem;
+}
+/*---ABOUT PAGE ----*/
+
+.about {
+    display: block;
+}
+
+.aboutBF{
+    padding: .5rem 1.5rem;
+}
+
+.aboutBF img{
+    width: 100%;
+}
+
+.inquiryBtn {
+    /* display: flex; */
+    text-align: center;
+    border: none;
+    background-color: var(--secundary);
+    color: white;
+    border-radius: 1rem;
+    padding: .75rem 2rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
+iframe {
+	width: 100%;
+    padding: 0 .5rem;
+    border: none;
+}
+
+
+/*---THANK YOU PAGE ----*/
+
+.thankYou {
+    max-width: 64rem;
+	margin: 2rem;
+	background-color: rgba(231, 230, 230, 0.5);
+	display: block;
+    text-align: center;
+}
+
+
+
+
+

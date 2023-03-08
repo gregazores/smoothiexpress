@@ -1,0 +1,137 @@
+/*64rem is also 1024px when basefont is 16px*/
+@media only screen and (min-width: 64em) {
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    h3, h4, p, a {
+        font-size: 1.1em;
+    }
+
+    div.logo img {
+        width: 140px;
+        height: auto;
+    }
+
+    /* Hamburger Button Styling */
+
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 1.2rem 5rem;
+    }
+
+    nav ul li.medpage {
+        border-right: 1px solid #777;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav button {
+        display: none;
+    }
+
+    nav ul li {
+        font-size: 1rem;
+    }
+
+    /* Footer Styling */
+
+    footer nav ul li a {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    /* Main Styling */
+
+    main.mainContent {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    section.welcome {
+        grid-column: 1/-1;
+        padding: 4rem;
+    }
+
+    .button1 {
+    background-color: var(--accent3);
+    border-radius: 20px;
+    padding: .5rem 3.5rem;
+}
+    .button1 {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    p.yourCart {
+        font-size: 1.5rem;
+    }
+
+    section.message1 {
+        padding: 0 5rem;
+    }
+
+    section.message1 div {
+        padding: 0 5rem;
+    }
+
+    .smoothies {
+        display: grid;
+        grid-column: 1/4;
+    }
+
+    .masterpiece {
+        display: grid;
+        grid-column: 4/5;
+        padding: 0 2rem;
+    }
+
+      
+    .social {
+        grid-column: 1/-1;
+        display: flex;
+        flex-direction: row-reverse;
+        text-align: center;
+        justify-content: flex-end;
+
+    } 
+    
+    .photo4{
+        display: contents;
+    }
+
+    .photo4 img{
+        width: 40%;
+    }
+
+
+/*---ABOUT PAGE ----*/
+
+form fieldset .inquiry{
+    text-align: left;
+}
+
+form .client {
+    padding: 0 3rem;
+}
+
+form .info2 {
+    font-size: .8rem;
+}
+
+/*---THANK YOU PAGE ----*/
+
+    .thankYou {
+        margin: 2rem auto;
+    }
+
+}
