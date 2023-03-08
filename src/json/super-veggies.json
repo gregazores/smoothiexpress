@@ -1,0 +1,30 @@
+{
+	"SuperVeggies": [{
+			"id": "AVO",
+			"name": "AVOCOLADA",
+			"image": "../images/smoothies_imgs/SuperSunriseSmoothie.png",
+			"alt": "AVOCOLADA",
+			"price": "$9.19",
+			"calories": "600 Calories",
+			"ingredients": "avocado, pineapple, spinach, kale, coconut & lime"
+		},
+		{
+			"id": "DIG",
+			"name": "DETOX ISLAND GREEN",
+			"image": "../images/smoothies_imgs/DetoxIslandGreen.png",
+			"alt": "DETOX ISLAND GREEN",
+			"price": "$8.19",
+			"calories": "180 Calories",
+			"ingredients": "spinach, kale, mango, pineapple, banana & fresh ginger (naturally sweetened)"
+		},
+		{
+			"id": "IGS",
+			"name": "ISLAND GREEN",
+			"image": "../images/smoothies_imgs/IslandGreen.png",
+			"alt": "ISLAND GREEN",
+			"price": "$7.99",
+			"calories": "410 Calories",
+			"ingredients": "spinach, kale, mango, pineapple & banana"
+		}
+	]
+}
