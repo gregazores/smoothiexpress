@@ -25,3 +25,8 @@ https://quiet-maamoul-933004.netlify.app/
 
 Github Repo
 https://github.com/gregazores/smoothiexpress
+
+API for the website:
+https://smoothiexpress-api.onrender.com/
+
+Trello Board:  https://trello.com/b/BJva0Dlk/nexperience-website-project
