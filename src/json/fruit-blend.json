@@ -1,0 +1,30 @@
+{
+	"FruitBlend": [{
+			"id": "BLS",
+			"name": "BLIMEY LIMEY",
+			"image": "../images/smoothies_imgs/BlimeyLimey.png",
+			"alt": "BLIMEY LIMEY",
+			"price": "$7.39",
+			"calories": "480 Calories",
+			"ingredients": "strawberries, pineapple, orange juice & lime"
+		},
+		{
+			"id": "BBS",
+			"name": "BLUEBERRY BLISS",
+			"image": "../images/smoothies_imgs/BlueberryBliss.png",
+			"alt": "BLUEBERRY BLISS",
+			"price": "$6.69",
+			"calories": "340 Calories",
+			"ingredients": "blueberries, strawberries & banana"
+		},
+		{
+			"id": "JPS",
+			"name": "JETTY PUNCH",
+			"image": "../images/smoothies_imgs/JettyPunch.png",
+			"alt": "JETTY PUNCH",
+			"price": "$6.89",
+			"calories": "370 Calories",
+			"ingredients": "strawberries & banana"
+		}
+	]
+}

@@ -1,0 +1,84 @@
+{
+	"BalancedFusions": [{
+			"id": "SSS",
+			"name": "SUPER SUNRISE SUNSET",
+			"image": "../images/smoothies_imgs/SuperSunriseSmoothie.png",
+			"alt": "SUPER SUNRISE SUNSET",
+			"price": "$8.59",
+			"calories": "480 Calories",
+			"ingredients": "strawberries, pineapple, mango, orange juice & multivitamin supplement"
+		},
+		{
+			"id": "PPS",
+			"name": "PEANUT PARADISE",
+			"image": "../images/smoothies_imgs/PeanutParadise.png",
+			"alt": "PEANUT PARADISE",
+			"price": "$7.89",
+			"calories": "680-730 Calories",
+			"ingredients": "peanut butter, banana, non-fat yogurt & choice of protein"
+		},
+		{
+			"id": "CBB",
+			"name": "CHIA BANANA BOOST",
+			"image": "../images/smoothies_imgs/ChiaBananaBoost.png",
+			"alt": "CHIA BANANA BOOST",
+			"price": "$8.29",
+			"calories": "610-770 Calories",
+			"ingredients": "banana, chia seeds, almonds, whole-grain oats, cinnamon, dates & coconut with choice of peanut butter or strawberries"
+		},
+		{
+			"id": "",
+			"name": "",
+			"image": "",
+			"alt": "",
+			"price": "$",
+			"calories": " Calories",
+			"ingredients": ""
+		},
+		{
+			"id": "",
+			"name": "",
+			"image": "",
+			"alt": "",
+			"price": "$",
+			"calories": " Calories",
+			"ingredients": ""
+		},
+		{
+			"id": "",
+			"name": "",
+			"image": "",
+			"alt": "",
+			"price": "$",
+			"calories": " Calories",
+			"ingredients": ""
+		},
+		{
+			"id": "",
+			"name": "",
+			"image": "",
+			"alt": "",
+			"price": "$",
+			"calories": " Calories",
+			"ingredients": ""
+		},
+		{
+			"id": "",
+			"name": "",
+			"image": "",
+			"alt": "",
+			"price": "$",
+			"calories": " Calories",
+			"ingredients": ""
+		},
+		{
+			"id": "",
+			"name": "",
+			"image": "",
+			"alt": "",
+			"price": "$",
+			"calories": " Calories",
+			"ingredients": ""
+		}
+	]
+}
