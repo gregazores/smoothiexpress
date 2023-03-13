@@ -371,6 +371,107 @@ iframe {
     text-align: center;
 }
 
+/*---PRODUCT DETAIL PAGE ----*/
+
+/* GREG STYLES */
+.product-details-page {
+    margin-bottom: 50px;
+}
+
+.product-details-page .aboutBF {
+    margin-top: 50px;
+}
+
+.product-details-page .inline-block-layout {
+    display: inline-block;
+}
+
+.product-details-page h2,
+.product-details-page p {
+    margin-top: 0px;
+}
+
+.product-detail__add {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-detail__add .button1.product-details-button1 {
+    background-color: var(--accent3);
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 0.5rem 3.5rem;
+    border: 0px;
+    cursor: pointer;
+}
+
+/*---PRODUCT LISTING PAGE ----*/
+.product-list-page .product-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list-page .product-list p {
+    margin: 0;
+}
+
+.product-list-page .product-card {
+    flex: 1 1 50%;
+    margin: 0.25em;
+    padding: 0.5em;
+    border: 1px solid #d0d0d0;
+    max-width: 350px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.product-list-page .product-card a {
+list-style: none;
+text-decoration: none;
+}
+
+.product-list-page .product-card img {
+    width: 100%;
+}
+
+.product-list-page .product-card h2 {
+    font-size: 1.3em;
+    color: #000000;
+}
+
+.product-list-page .product-list .product-card__price {
+    font-size: 1.6rem;
+    color: #398dae;
+}
+
+.product-list .product-card__price .disc-ind {
+    color: #fff;
+    background-color: #f26225;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+
+.product-list .product-card__suggested {
+    font-size: 1.3rem;
+    text-decoration: line-through;
+}
+
+.product-list-page .product-card .product-detail__add.quick-view-container {
+    margin: 20px 0;
+}
+
+/* GREG STYLES */
+
+
+
+
+
+
+
 
 
 

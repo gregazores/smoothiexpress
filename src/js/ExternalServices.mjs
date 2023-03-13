@@ -19,10 +19,9 @@ export default class ExternalServices {
     this.baseURL = 'https://smoothiexpress-api.onrender.com'
   }
   async getData(category) {
-    const response = await fetch(baseURL + `products/search/${category}`);
-    console.log(baseURL + `products/search/${category}`)
+    const response = await fetch(this.baseURL + `/${category}`);
     const data = await convertToJson(response);
-    return data.Result;
+    return data;
   }
   async findProductById(category, id) {
     const response = await fetch(this.baseURL + `/${category}/${id}`);
