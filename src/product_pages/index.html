@@ -7,11 +7,12 @@
     <title>Bountiful Foods Home Page</title>
     <meta name="description" content="Bountiful Foods serving coastal area from LA to San Diego">
     <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="../js/product.js" type="module"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link href="css/base.css" rel="stylesheet">
-    <link href="css/medium.css" rel="stylesheet">
-    <link href="css/large.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/medium.css" rel="stylesheet">
+    <link href="../css/large.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Source+Sans+Pro&display=swap"
@@ -25,13 +26,13 @@
         <section class="headertop">
             <div class="logo">
                 <picture>
-                    <img src="images/logo-Bountiful-Foods.svg" alt="Logo of Smoothie Xpress" loading="lazy">
+                    <img src="../public/images/logo-Bountiful-Foods.svg" alt="Logo of Bountiful Foods" loading="lazy">
                 </picture>
                 <section class="headings">
-                    <h1>Smoothie Xpress</h1>
-                    <p>2700 SW District Ave, Stuart, FL 33404</p>
-                    <p>☎️ (772) 331-2955</p>
-                </section> 
+                    <h1>Bountiful Foods</h1>
+                    <p>2647 Gateway Rd, Carlsbad, CA 92009</p>
+                    <p>☎️ (760) 331-2955</p>
+                </section>
             </div>
 
 
@@ -44,98 +45,40 @@
                 </ul>
             </nav>
         </section>
-        <p class="yourCart"><em>Your cart: </em><span id="numberSpecDrinks"></span> drink(s) ordered.</p>
     </header>
-
-    <main class="mainContent">
-        <section class="welcome">
-            <picture><img src="images/photo1.webp" alt="photo of local oranges" loading="lazy"></picture>
-            <h2>Welcome to<br />Smoothie Xpress</h2>
-            <p>Our mission is to provide fresh and healthy food options, including organic fruit drinks
-                to help you stay on track in your wellness journey.</p>
-            <section class="buttons">
-                <div class="button1">
-                    <a class="click1" href="about.html">LEARN MORE</a>
+    <main class="product-details-page">
+        <div class="breadcrumbs-container">
+            <ul class="breadcrumbs-ul">
+              <li class="breadcrumbs-li home"></li>
+              <li class="breadcrumbs-li category"></li>
+              <li class="breadcrumbs-li product-name"></li>
+            </ul>
+        </div>
+        <div class="product-detail">
+            <!-- <h2 class="pageTitle">SUPER SUNRISE SUNSET</h2>
+            <section class="about">
+                <div class="product-image">
+                    <picture><img src="../public/images/smoothies_imgs/super_sunrise_sunset.avif" alt="SUPER SUNRISE SUNSET" loading="lazy"></picture>
                 </div>
-                <div class="button1">
-                    <a class="click1" href="fresh.html">ORDER NOW</a>
+                <div class="aboutBF">
+                    <h2 class="inline-block-layout">Price</h2>
+                    <p class="inline-block-layout">$8.59</p>
+                    <br>
+                    <h2 class="inline-block-layout">Calories</h2>
+                    <p class="inline-block-layout">480 Calories</p>
+                    <h2>Ingredients</h2>
+                    <p>strawberries, pineapple, mango, orange juice & multivitamin supplement</p>
                 </div>
             </section>
-        </section>
+    
+            <div class="button1 product-details-button1">
+                <a class="click1" href="fresh.html">ORDER NOW</a>
+            </div> -->
+        </div>
 
 
-        <section class="message1">
-            <picture><img src="images/photo2.webp" alt="photo of kiwis and blueberries" loading="lazy"></picture>
-            <div>
-                <h2>Locally grown <br />Locally loved</h2>
-                <p>We are physically located in Carlsbad, California, however, we have many food trucks that cover the
-                    coastal area from Los Angeles to San Diego.</p>
-                <p>We sell fruits and produce directly from the farmers in the area, bringing food and people together.</p>
-            </div>
-        </section>
-
-        <section class="message1">
-            <div>
-                <h2>When nutrition meets convenience</h2>
-                <p>With many options available, we are sure you will find the perfect combination to satisfy your taste buds while fueling your body with the right nutrients.</p>
-                <p>Our drinks are made to order within minutes after an order is placed. Your convenience is our top priority.</p>
-            </div>
-            <picture><img src="images/photo3.webp" alt="photo of Carlsbad Beach" loading="lazy"></picture>
-        </section>
-
-        <section class="smoothies">
-            <h2>Enjoy our signature mixes</h2>
-            <div class="smoothiesPics">
-                <div>
-                    <picture class="smoothie"><img src="images/smoothie1.webp" alt="photo of Pink Flamingo smoothie" loading="lazy">
-                    </picture>
-                    <h3>Pink Flamingo</h3>
-                    <p>Dragon fruit, strawberry, pineapple,coconut water, and agave.</p>
-                    <p>200 | 450 Cal</p>
-                </div>
-                <div>
-                    <picture class="smoothie"><img src="images/smoothie2.webp" alt="photo of Pink Flamingo smoothie" loading="lazy">
-                    </picture>
-                    <h3>Popeye's Acai</h3>
-                    <p>Açaí, banana, blueberry, spinach, housemade cashew milk and agave.</p>
-                    <p>320 | 450 Cal</p>
-                </div>
-                <div>
-                    <picture class="smoothie"><img src="images/smoothie3.webp" alt="photo of Tropical Cooler smoothie" loading="lazy">
-                    </picture>
-                    <h3>Tropical Cooler</h3>
-                    <p>Spinach, kale, pineapple, banana, coconut flakes, and coconut water.</p>
-                    <p>220 | 320 Cal</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="masterpiece">
-            <!-- <h2 class="message1">Or create your own masterpierce</h2> -->
-            <div><a class="masterButton" href="fresh.html">ORDER NOW</a></div>
-            <!-- <p>Visit the Fresh page and let your imagination flow creating your own fruit drink mix</p> -->
-        </section>
-
-        <section class="social">
-            <div class="socialText">
-                <h2>Get In Touch</h2>
-                <p>Connect with us through our social media channels
-                    <br />Tag us next time in your story and we will repost it
-                </p>
-                <div class="socialMedia">
-                    <a class="padding05" href="https://www.facebook.com/" target="_blank"><img src="images/facebook.svg"
-                            alt="Facebook Icon" loading="lazy"></a>
-                    <a class="padding05" href="https://www.instagram.com/" target="_blank"><img
-                            src="images/instagram.svg" alt="Instagram Icon" loading="lazy"></a>
-                    <a class="padding05" href="https://www.twitter.com/" target="_blank"><img src="images/twitter.svg"
-                            alt="Twitter Icon" loading="lazy"></a>
-                </div>
-            </div>
-            <div>
-                <picture class="photo4"><img src="images/photo4.webp" alt="photo of smoothie in coconut" loading="lazy"></picture>
-            </div>
-        </section>
     </main>
+
     <footer>
         <nav>
             <!-- <button id="hamButton"><span>&#9776;</span></button> -->
@@ -151,20 +94,19 @@
         </nav>
         <section class="bottomInfo">
             <div>
-                <p>Smoothie Xpress<br />
-                    2700 SW District Ave, Stuart, FL 33404<br />
-                    &copy;<span id="year"></span> Smoothie Xpress. All rights reserved.</p>
+                <p>Bountiful Foods<br />
+                    2647 Gateway Rd, Carlsbad, CA 92009<br />
+                    &copy;<span id="year"></span> Bountiful Foods. All rights reserved.</p>
             </div>
             <div>
-                <p>☎️ (772) 331-2955</p>
+                <p>☎️ (760) 331-2955</p>
             </div>
             <div>
                 <p>Last Modify: <span id="lastupdated"></span></p>
             </div>
         </section>
     </footer>
-    <!-- <script src="scripts/script.js"></script>
-    <script src="scripts/weather.js"></script> -->
+    <script src="../public/scripts/script.js"></script>
 </body>
 
 </html>

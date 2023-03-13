@@ -134,4 +134,36 @@ form .info2 {
         margin: 2rem auto;
     }
 
+/*---PRODUCT DETAIL PAGE ----*/
+.product-details-page {
+    margin-bottom: 50px;
+}
+
+.product-details-page .aboutBF {
+    margin-top: 50px;
+}
+
+.product-details-page .inline-block-layout {
+    display: inline-block;
+}
+
+.product-details-page h2,
+.product-details-page p {
+    margin-top: 0px;
+}
+
+.product-details-page .product-detail__add {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-details-page .product-detail__add .button1.product-details-button1{
+    background-color: var(--accent3);
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 0.5rem 3.5rem;
+    border: 0px;
+}
+
 }
