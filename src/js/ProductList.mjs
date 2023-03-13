@@ -23,22 +23,22 @@ function productCardTemplate(product, baseURL, category) {
   
 }
 
-function productModalTemplate(product) {
+function productModalTemplate(product, baseURL) {
     return `
-    <h2 class="divider">${product.NameWithoutBrand}</h2>
+    <h2 class="divider">${product.name}</h2>
   
     <picture class="divider">
-      <source media="(min-width:850px)" srcset="${product.Images.PrimaryMedium}">
-      <source media="(min-width:500px)" srcset="${product.Images.PrimarySmall}">
-      <img src="${product.Images.PrimaryExtraLarge}">
+      <source media="(min-width:850px)" srcset="${baseURL}/${product.image}">
+      <source media="(min-width:500px)" srcset="${baseURL}/${product.image}">
+      <img src="${baseURL}/${product.image}" width="500" alt="Image of ${product.alt}">
     </picture>
   
     <p class="product__description">
-      ${product.DescriptionHtmlSimple}
+        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
     </p>
   
     <div class="close-button-container">
-      <button id="close-button">X</button>
+      <button id="close-button">Close</button>
     </div>
     
     `
@@ -53,7 +53,7 @@ export default class ProductList {
       this.listElement = listElement;
     }
     async init() {
-    //   const modalContainer = document.querySelector('.product-detail.quick-view .product-detail-wrapper')
+      const modalContainer = document.querySelector('.product-detail.quick-view .product-detail-wrapper')
       // our dataSource will return a Promise...so we can use await to resolve it.
       //const list = await this.dataSource.getData();
       const list = await this.dataSource.getData(this.category);
@@ -67,7 +67,7 @@ export default class ProductList {
     //   breadcrumbsCategory.innerHTML = `${this.category.charAt(0).toUpperCase() + this.category.slice(1)} (${list.length} items)`;
 
     //   //add event listener to quick view buttons
-    //   this.addQuickViewListener(list, modalContainer);
+      this.addQuickViewListener(list, modalContainer);
     }
 
     renderList(list) {
@@ -84,46 +84,40 @@ export default class ProductList {
         button.addEventListener('click', (e) => {
           //extracting the  href value
           //after extracting the href value, extract the product id
-          const prodId = e.target.parentNode.querySelector('a').href.split('=')[1];
+          const prodId = e.target.parentNode.parentNode.querySelector('a').href.split('=')[1].split('&')[0];
 
           //call the displayModal function to render the html
           this.displayModal(list, prodId, modalContainer)
+          console.log("addQuickViewListener",this.dataSource)
         })
       })
     } 
     
     displayModal(list, prodId, modalContainer) {
+        let baseURL = this.dataSource.baseURL
       //let's do promises to ensure that the listItem is returned
       //before we proceed to the next steps
-      let promise = new Promise(function(resolve, reject) {
-        //experimenting on promises and delaying the completion of the 
-        //tast to see if promises really work
-        // setTimeout(() => {
-              //return the list item based on the product Id
-        //   resolve(list.find(listItem => listItem.Id == prodId ))
-        // }, 5000)
-
-        //return the list item based on the product Id
-        resolve(list.find(listItem => listItem.Id == prodId ))
-        
-      })
+        let promise = new Promise(function(resolve, reject) {
+            resolve(list.find(listItem => listItem._id == prodId ))
+        })
       
       //once list item is returned, proceed to the next steps
-      promise.then(
-        function(result) {
-          //add classname to the modalContainer to display
-          modalContainer.parentNode.classList.add('show-modal')
-          //render the HTML content
-          renderListWithTemplate(productModalTemplate, modalContainer, [result]);
-          //add an eventListener to the close button
-          const closeBtn = document.querySelector('.close-button-container');
-          closeBtn.addEventListener('click', () => {
-            modalContainer.parentNode.classList.remove('show-modal')
-            modalContainer.innerHTML = ""
+        promise.then(
+            function(result) {
+                //add classname to the modalContainer to display
+                modalContainer.parentNode.classList.add('show-modal')
+                //render the HTML content
+                renderListWithTemplate((product) => {
+                return productModalTemplate(product, baseURL)
+            }, modalContainer, [result]);
+            //add an eventListener to the close button
+            const closeBtn = document.querySelector('.close-button-container');
+            closeBtn.addEventListener('click', () => {
+                modalContainer.parentNode.classList.remove('show-modal')
+                modalContainer.innerHTML = ""
           })
 
-        }
-      )
+        })
     }
 }
 

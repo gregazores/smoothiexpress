@@ -391,12 +391,14 @@ iframe {
     margin-top: 0px;
 }
 
-.product-detail__add {
+.product-detail__add,
+.product-detail.quick-view .product-detail-wrapper .close-button-container {
     margin-top: 50px;
     text-align: center;
 }
 
-.product-detail__add .button1.product-details-button1 {
+.product-detail__add .button1.product-details-button1,
+.product-detail.quick-view .product-detail-wrapper .close-button-container button {
     background-color: var(--accent3);
     font-size: 1.5rem;
     font-weight: 500;
@@ -463,6 +465,38 @@ text-decoration: none;
 .product-list-page .product-card .product-detail__add.quick-view-container {
     margin: 20px 0;
 }
+
+/*---Quick View Modal Styling ----*/
+.product-detail.quick-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000062;
+    max-width: none;
+}
+
+.product-detail.quick-view.show-modal {
+    display: block;
+  }
+
+.product-detail.quick-view .product-detail-wrapper {
+    position: relative;
+    padding: 50px 1em 1em;
+    max-width: 500px;
+    margin: 50px auto 0 auto;
+    background-color: #fff;
+    text-align: center;
+}
+
+.product-detail.quick-view .product-detail-wrapper picture img {
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    width: 100%;
+}
+
 
 /* GREG STYLES */
 
