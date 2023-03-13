@@ -371,6 +371,141 @@ iframe {
     text-align: center;
 }
 
+/*---PRODUCT DETAIL PAGE ----*/
+
+/* GREG STYLES */
+.product-details-page {
+    margin-bottom: 50px;
+}
+
+.product-details-page .aboutBF {
+    margin-top: 50px;
+}
+
+.product-details-page .inline-block-layout {
+    display: inline-block;
+}
+
+.product-details-page h2,
+.product-details-page p {
+    margin-top: 0px;
+}
+
+.product-detail__add,
+.product-detail.quick-view .product-detail-wrapper .close-button-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-detail__add .button1.product-details-button1,
+.product-detail.quick-view .product-detail-wrapper .close-button-container button {
+    background-color: var(--accent3);
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 0.5rem 3.5rem;
+    border: 0px;
+    cursor: pointer;
+}
+
+/*---PRODUCT LISTING PAGE ----*/
+.product-list-page .product-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list-page .product-list p {
+    margin: 0;
+}
+
+.product-list-page .product-card {
+    flex: 1 1 50%;
+    margin: 0.25em;
+    padding: 0.5em;
+    border: 1px solid #d0d0d0;
+    max-width: 350px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.product-list-page .product-card a {
+list-style: none;
+text-decoration: none;
+}
+
+.product-list-page .product-card img {
+    width: 100%;
+}
+
+.product-list-page .product-card h2 {
+    font-size: 1.3em;
+    color: #000000;
+}
+
+.product-list-page .product-list .product-card__price {
+    font-size: 1.6rem;
+    color: #398dae;
+}
+
+.product-list .product-card__price .disc-ind {
+    color: #fff;
+    background-color: #f26225;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+
+.product-list .product-card__suggested {
+    font-size: 1.3rem;
+    text-decoration: line-through;
+}
+
+.product-list-page .product-card .product-detail__add.quick-view-container {
+    margin: 20px 0;
+}
+
+/*---Quick View Modal Styling ----*/
+.product-detail.quick-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000062;
+    max-width: none;
+}
+
+.product-detail.quick-view.show-modal {
+    display: block;
+  }
+
+.product-detail.quick-view .product-detail-wrapper {
+    position: relative;
+    padding: 50px 1em 1em;
+    max-width: 500px;
+    margin: 50px auto 0 auto;
+    background-color: #fff;
+    text-align: center;
+}
+
+.product-detail.quick-view .product-detail-wrapper picture img {
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    width: 100%;
+}
+
+
+/* GREG STYLES */
+
+
+
+
+
+
+
 
 
 
