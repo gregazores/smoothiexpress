@@ -32,9 +32,10 @@ function productModalTemplate(product, baseURL) {
       <source media="(min-width:500px)" srcset="${baseURL}/${product.image}">
       <img src="${baseURL}/${product.image}" width="500" alt="Image of ${product.alt}">
     </picture>
-  
+
+    <h3 class="ingredients">Ingredients</h3>
     <p class="product__description">
-        In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
+        ${product.ingredients}
     </p>
   
     <div class="close-button-container">
