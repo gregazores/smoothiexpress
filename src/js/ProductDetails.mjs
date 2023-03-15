@@ -1,6 +1,8 @@
 import { getLocalStorage, setLocalStorage } from '../js/utils.mjs';
 
 function productDetailsTemplate(product, baseURL) {
+  let discountPercent = 10
+  let discountDollars = product.price * ((100-discountPercent)/100)
   return `
         <h2 class="pageTitle">${product.name}</h2>
         <section class="about">
@@ -9,7 +11,7 @@ function productDetailsTemplate(product, baseURL) {
             </div>
             <div class="aboutBF">
                 <h2 class="inline-block-layout">Price: </h2>
-                <p class="inline-block-layout"> $${product.price.toFixed(2)}</p>
+                <p class="inline-block-layout"> $${discountDollars.toFixed(2)}</p>
                 <br>
                 <h2 class="inline-block-layout">Calories: </h2>
                 <p class="inline-block-layout"> ${product.calories} cal</p>

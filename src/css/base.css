@@ -398,7 +398,10 @@ iframe {
 }
 
 .product-detail__add .button1.product-details-button1,
-.product-detail.quick-view .product-detail-wrapper .close-button-container button {
+.product-detail.quick-view .product-detail-wrapper .close-button-container button,
+.remove-btn .cart-remove__item,
+.cart_qty .decrease_units,
+.cart_qty .increase_units {
     background-color: var(--accent3);
     font-size: 1.5rem;
     font-weight: 500;
@@ -496,6 +499,124 @@ text-decoration: none;
     border-bottom: solid 2px black;
     width: 100%;
 }
+
+/* Start cart list card styles */
+.cart-card {
+    display: grid;
+    grid-template-columns: 25% auto 15%;
+    font-size: var(--small-font);
+    /* max-height: 120px; */
+    align-items: center;
+    width: 100%;
+  }
+
+  .cart-page .cart-section h2{
+    font-size: 1.7em;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .cart-card__image {
+    grid-row: 1/4;
+    grid-column: 1;
+  }
+
+  .cart-card__image img {
+    width: 100%;
+  }
+  
+  .cart-card p {
+    margin-top: 0;
+  }
+  .cart-card .card__name {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  
+  .cart-card__color {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  
+  .cart-remove__item {
+    grid-row: 1;
+    grid-column: 3;
+    text-align: center;
+    padding: 0.5em;
+    position: relative;
+    bottom: 5px;
+    left: 50px;
+  }
+  .cart_qty {
+    grid-row: 4;
+    grid-column: 2;
+    position: relative;
+    /* display: flex;
+    flex-direction: row; */
+    /* align-items: flex-end; */
+    /* border: 1px solid#303030; */
+  }
+  
+  .cart-card__unit_price {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  
+  .cart-card__total_price {
+    grid-row: 4;
+    grid-column: 3;
+  }
+  
+  
+  /* alert styles */
+  .alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em;
+    background-color: var(--primary-color);
+    border: 1px solid darkorange;
+  }
+  .alert > p {
+    margin: 0;
+  }
+  
+  .alert > span:hover {
+    cursor: pointer;
+  }
+
+  /* Styling of the cart quantities buttons---Natalia */
+  .decrease_units, .increase_units, .cart-card__quantity {
+  padding: .5em;
+  position: relative;
+  margin: 0;
+  }
+  
+  /* .decrease_units {
+    position: relative;
+    right: 100px;
+  }
+  */
+  .cart-card__quantity {
+    position: relative;
+    bottom: 40px;
+    left: 30px;
+  }
+  
+  .increase_units{ 
+    position: relative;
+    bottom: 85.5px;
+    left: 58px;
+    margin: 0;
+  } 
+
+  .remove-btn .cart-remove__item,
+  .cart_qty .decrease_units,
+  .cart_qty .increase_units {
+      padding: 5px 12px;
+      border-radius: 5px;
+  }
+  /* End of Styling of the cart quantities buttons---Natalia */
+
 
 
 /* GREG STYLES */

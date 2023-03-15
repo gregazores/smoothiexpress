@@ -4,7 +4,7 @@ function productCardTemplate(product, baseURL, category) {
 
     //computing the discount in amount and percentage -GREG
     let discountPercent = 10
-    let discountDollars = product.price * ((100-10)/100)
+    let discountDollars = product.price * ((100-discountPercent)/100)
     
     // I have also included the discount details in the template -GREG
     return `
