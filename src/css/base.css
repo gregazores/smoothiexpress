@@ -192,10 +192,10 @@ section.message1 {
     width: 30%;
 }
 
-.masterpiece {
+/* .masterpiece {
     grid-column: 1/-1;
     flex-direction: column;
-}
+} */
 
 .masterButton {
     background-color: #85bd30;
