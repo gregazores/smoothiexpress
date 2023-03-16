@@ -487,7 +487,7 @@ text-decoration: none;
 
 .product-detail.quick-view .product-detail-wrapper {
     position: relative;
-    padding: 50px 1em 1em;
+    padding: 20px 1em;
     max-width: 500px;
     margin: 50px auto 0 auto;
     background-color: #fff;
@@ -509,6 +509,10 @@ text-decoration: none;
     align-items: center;
     width: 100%;
   }
+
+  .cart-page .cart-section .divider {
+    border-bottom: 2px solid var(--secundary);
+}
 
   .cart-page .cart-section h2{
     font-size: 1.7em;
@@ -616,6 +620,36 @@ text-decoration: none;
       border-radius: 5px;
   }
   /* End of Styling of the cart quantities buttons---Natalia */
+
+  /* cart page footer (checkout button and subtotal */
+
+.list-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5em;
+    margin-bottom: 40px;
+  }
+  .list-footer > a {
+    /* display: block; */
+    padding: 0.3em 0.5em;
+    background-color: var(--secundary);
+    text-decoration: none;
+    border-radius: 5px;
+    color: #ffff !important;
+  }
+  
+  .list-footer.hide a {
+    visibility: hidden;
+  }
+  
+  .list-total {
+    text-align: right;
+  }
+  .list-footer a:link,
+  .list-footer a:visited {
+    color: var(--dark-grey);
+  }
 
 
 

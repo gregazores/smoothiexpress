@@ -8,7 +8,6 @@ const cart = new ShoppingCart('so-cart', '.product-list');
 
 //imclude the renderContents() in the ShoppingCart method as per instrutor's example
 cart.init();
-console.log(cart.total)
 //if cart is empty, hide the checkout button part
 if (cart.total > 0) {
     // show our checkout button and total if there are items in the cart.

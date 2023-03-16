@@ -59,8 +59,9 @@ export default class ShoppingCart {
     
     //compute the sub-total price of the cart
     calculateListTotal(list) {
+      let discountPercent = 10
       //price for each item is computed by finalPrice times quantity
-      const amounts = list.map((item) => item.FinalPrice * item.quantity);
+      const amounts = list.map((item) => (item.price * ((100-discountPercent)/100)).toFixed(2) * item.quantity);
       //execute the code below if amounts array is not empty
       if (amounts.length) {
         this.total = amounts.reduce((sum, item) => sum + item);
