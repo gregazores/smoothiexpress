@@ -113,7 +113,14 @@ nav ul {
 nav ul.open {
     display: block;
 }
-
+/*Basket  icon styles --- Natalia */
+.basket-icon img {
+    margin-right: 1em;
+    position: relative;
+    /* text-align: center;   */
+    width: 2rem; 
+}
+/* End basket icon styles */
 /* Footer Styling */
 footer {
     background-color: var(--accent3);
