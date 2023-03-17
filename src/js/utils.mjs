@@ -46,13 +46,13 @@ export function renderListWithTemplate(
   parentElement.insertAdjacentHTML(position, htmlStrings.join(''));
 }
 
-export function renderCartSuperscript(data) {
-  const cartSuperscript = document.querySelector("header .cart");
-  cartSuperscript.style.cssText = `--item : '${data}';`
+// export function renderCartSuperscript(data) {
+  // const cartSuperscript = document.querySelector("header .cart");
+  // cartSuperscript.style.cssText = `--item : '${data}';`
   //superscriptContainer.innerHTML = `${data}`;
   //superscriptContainer.setAttribute('data-product-count', data);
   //cartElement.style.cssText = `--item : '${data}';`
-}
+// }
  
 export function renderWithTemplate(
   template,
@@ -97,7 +97,8 @@ export async function loadHeaderFooter() {
   const cartTotalQuantity = returnCartTotalQuantities('so-cart');
   //const cartQuantity = returnCartItems(['so-cart']).length;
 
-  renderWithTemplate(headerTemplate, headerElement, cartTotalQuantity, renderCartSuperscript);
+  renderWithTemplate(headerTemplate, headerElement, cartTotalQuantity//, renderCartSuperscript//
+  );
   renderWithTemplate(footerTemplate, footerElement);
 }
 
