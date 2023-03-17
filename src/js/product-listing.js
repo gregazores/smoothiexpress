@@ -1,8 +1,8 @@
-import { /*loadHeaderFooter,*/ getParam } from "./utils.mjs";
+import { loadHeaderFooter, getParam } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 import ProductList from "./ProductList.mjs";
 //console.log('no paso :(')
-// loadHeaderFooter();
+loadHeaderFooter();
 
 const category = getParam("category");
 // first create an instance of our ExternalServices class.
@@ -18,7 +18,7 @@ listing.init();
 
 //Change the header based on the category
 const productHeader = document.querySelector('.products > h2');
-productHeader.innerHTML = `Top Products: ${category.charAt(0).toUpperCase() + category.slice(1)}`
+productHeader.innerHTML = `Category: ${category.charAt(0).toUpperCase() + category.slice(1)}`
 
 //Manually set the breadcrumbs -Greg
 //I have transferred this feature in ProductListmjs init

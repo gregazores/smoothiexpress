@@ -1,65 +1,6 @@
-/* Primary Nav Button */
-function toggleMenu() {
-    document.getElementById("primaryNav").classList.toggle("open");
-    document.getElementById("hamButton").classList.toggle("open");
-  }
-  const x = document.getElementById("hamButton");
-  x.onclick = toggleMenu;
+
   
-  /*Last Modified */
-  document.querySelector("#year").textContent = new Date().getFullYear();
-  document.querySelector("#lastupdated").textContent = document.lastModified;
-  
-  /* Weather */
-  
-  
-  
-  
-  
-  
-  /*Form */
-  
-  const fruitsJSON =
-    "https://brotherblazzard.github.io/canvas-content/fruit.json";
-  
-  const valid1 = document.querySelector(".fruit1");
-  if (valid1) {
-    getData();
-  }
-  
-  async function getData() {
-    const response = await fetch(fruitsJSON);
-    if (response.ok) {
-      data = await response.json();
-      console.log(data);
-      displayData();
-    }
-  };
-  
-  let data = [];
-  
-  function displayData() {
-    for (let i = 1; i < 4; i++) {
-      let fruitName = document.createElement("select");
-  
-      fruitName.name = `fruit${i}`;
-      fruitName.id = `fruit${i}`;
-  
-      let key = 0;
-      data.forEach((fruit) => {
-        let option = document.createElement("option");
-  
-        option.value = key;
-        key++;
-        option.textContent = fruit.name;
-        fruitName.appendChild(option);
-      });
-      console.log(fruitName);
-      document.querySelector(`.fruit${i}`).appendChild(fruitName);
-    }
-  }
-  
-  /*-- Button Listener --*/
+  /*-- Form Button Listener to order a drink--*/
   
   const mix = document.querySelector(".submitBtn");
   if (mix) {
@@ -85,14 +26,7 @@ function toggleMenu() {
     email.textContent = `Email: ${emailInput}`;
     phone.textContent = `Phone: ${phoneInput}`;
   
-    mixCard.appendChild(title);
-    mixCard.appendChild(name);
-    mixCard.appendChild(email);
-    mixCard.appendChild(phone);
-  
-    // nameInput = '';
-    // emailInput = '';
-    // phoneInput = '';
+
   
     
   
