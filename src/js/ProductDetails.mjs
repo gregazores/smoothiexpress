@@ -11,7 +11,10 @@ function productDetailsTemplate(product, baseURL) {
             </div>
             <div class="aboutBF">
                 <h2 class="inline-block-layout">Price: </h2>
-                <p class="inline-block-layout"> $${discountDollars.toFixed(2)}</p>
+                <p class="inline-block-layout original-old-price"><span class="final_price"><strong>$${discountDollars.toFixed(2)}</strong></span>&nbsp; &nbsp;<span class="suggested_price">$${product.price.toFixed(2)}</span></p>
+                <br>
+                <h2 class="inline-block-layout">You saved: </h2>
+                <p class="inline-block-layout discount_indicator"><span class="discount-amount">$${(product.price - discountDollars).toFixed(2)} (${discountPercent.toFixed(2)}%)</span></p>
                 <br>
                 <h2 class="inline-block-layout">Calories: </h2>
                 <p class="inline-block-layout"> ${product.calories} cal</p>
@@ -39,6 +42,24 @@ export default class ProductDetails {
     this.product = await this.dataSource.findProductById(this.category, this.productId);
     // once we have the product details we can render out the HTML
     this.renderProductDetails('.product-detail');
+      //upon changing the selector, we will need to remove 
+    //<section class='product-detail'> opening and  </section> closing 
+    //in the productDetailsDisplay function 
+    // NOTES FROM GREG ABOVE
+
+    //Manually set the breadcrumbs -Greg
+    const breadcrumbsHome = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.home');
+    console.log(window.location.hostname)
+    breadcrumbsHome.innerHTML =`<a href="/">Home</a>`;
+
+    const breadcrumbsCategory = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.category');
+    breadcrumbsCategory.innerHTML = `<a href="/product-listing/index.html?category=${this.category}">${this.category.charAt(0).toUpperCase() + this.category.slice(1)}</a>`;
+
+    const breadcrumbsProductName = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.product-name');
+    breadcrumbsProductName.innerHTML = this.product.name;
+
+
+
     // once the HTML is rendered we can add a listener to Add to Cart button
     // Notice the .bind(this). Our callback will not work if we don't include that line. Review the readings from this week on 'this' to understand why.
     document

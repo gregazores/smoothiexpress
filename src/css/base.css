@@ -386,6 +386,20 @@ iframe {
     display: inline-block;
 }
 
+.product-details-page .original-old-price .final_price {
+    font-size: 1.3em;
+    color: red;
+}
+
+.product-details-page .original-old-price .suggested_price {
+    text-decoration: line-through;
+}
+
+.product-details-page .discount_indicator {
+    color: var(--secundary);
+    font-size: 1.3em;
+}
+
 .product-details-page h2,
 .product-details-page p {
     margin-top: 0px;
@@ -432,6 +446,7 @@ iframe {
     max-width: 350px;
     list-style: none;
     text-decoration: none;
+    margin-bottom: 30px;
 }
 
 .product-list-page .product-card a {
@@ -514,9 +529,14 @@ text-decoration: none;
     border-bottom: 2px solid var(--secundary);
 }
 
+.cart-page .cart-section a {
+    text-decoration: none;
+}
+
   .cart-page .cart-section h2{
     font-size: 1.7em;
     font-family: 'Montserrat', sans-serif;
+    color: var(--secundary);
   }
   
   .cart-card__image {
@@ -632,6 +652,7 @@ text-decoration: none;
   }
   .list-footer > a {
     /* display: block; */
+    font-size: 1.7em;
     padding: 0.3em 0.5em;
     background-color: var(--secundary);
     text-decoration: none;
@@ -650,6 +671,46 @@ text-decoration: none;
   .list-footer a:visited {
     color: var(--dark-grey);
   }
+
+  /* Start Breadcrumb Styles Greg */
+.breadcrumbs-container {
+    padding: 0 18px;
+  }
+  .breadcrumbs-container .breadcrumbs-ul {
+    display: flex;
+    padding-left: 0px;
+  }
+  
+  .breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li {
+    display: inline-block;
+    margin-right: 6px;
+  }
+  
+  .breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li::after {
+    content: ">>";
+    margin-left: 6px;
+    color: #f0a868;
+  }
+  
+  .breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li a {
+    text-decoration: none;
+    color: #303030;
+  }
+  
+  .breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li:hover a {
+    text-decoration:underline;
+  }
+  
+  .breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li:last-child::after {
+    content: "";
+  }
+  
+  .breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li:last-child {
+    color: #303030a8;
+  }
+  
+  
+  /* End Breadcrumb Styles Greg */
 
 
 

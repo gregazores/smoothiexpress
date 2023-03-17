@@ -62,10 +62,10 @@ export default class ProductList {
       this.renderList(list);
 
       //Manually set the breadcrumbs -Greg
-    //   const breadcrumbsHome = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.home');
-    //   breadcrumbsHome.innerHTML = `<a href="/">Home</a>`;
-    //   const breadcrumbsCategory = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.category');
-    //   breadcrumbsCategory.innerHTML = `${this.category.charAt(0).toUpperCase() + this.category.slice(1)} (${list.length} items)`;
+      const breadcrumbsHome = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.home');
+      breadcrumbsHome.innerHTML = `<a href="/">Home</a>`;
+      const breadcrumbsCategory = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.category');
+      breadcrumbsCategory.innerHTML = `${this.category.charAt(0).toUpperCase() + this.category.slice(1)} (${list.length} items)`;
 
     //   //add event listener to quick view buttons
       this.addQuickViewListener(list, modalContainer);
