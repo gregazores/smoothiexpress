@@ -10,13 +10,13 @@ function cartItemTemplate(item, baseURL) {
   const subtotal = (item.quantity * discountDollars).toFixed(2)
 
   const newItem = `<li class="cart-card divider">
-    <a href="/product_pages/index.html?product=${item._id}&category=${/*category*/1}" class="cart-card__image">
+    <a href="/product_pages/index.html?product=${item._id}&category=${item.category}" class="cart-card__image">
       <img
         src="${baseURL}/${item.image}"
         alt="${item.alt}"
       />
     </a>
-    <a href="/product_pages/index.html?product=${item._id}&category=${/*category*/1}">
+    <a href="/product_pages/index.html?product=${item._id}&category=${item.category}">
       <h2 class="card__name">${item.name}</h2>
     </a>
     <p class="cart-card__color">${item.ingredients}</p>
