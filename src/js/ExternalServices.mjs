@@ -1,5 +1,5 @@
 //const baseURL = 'http://server-nodejs.cit.byui.edu:3000/'
-//const baseURL = 'https://wdd330-backend.onrender.com/'
+const secondURL = 'https://wdd330-backend.onrender.com/'
 // const baseURL = "https://wdd330-backend.vercel.app/";
 // export const baseURL = 'https://smoothiexpress-api.onrender.com'
 // const baseURL = 'http://localhost:8000'
@@ -10,7 +10,7 @@ async function convertToJson(res) {
   if (res.ok) {
     return data;
   } else {
-    throw { name: 'servicesError', message: jsonResponse };
+    throw { name: 'servicesError', message: data };
   }
 }
 
@@ -36,7 +36,7 @@ export default class ExternalServices {
       },
       body: JSON.stringify(payload),
     };
-    return await fetch(baseURL + "checkout/", options).then(convertToJson);
+    return await fetch(secondURL + "checkout/", options).then(convertToJson);
   }
 
 
@@ -48,7 +48,7 @@ async loginRequest(user) {
     },
     body: JSON.stringify(user),
   };
-  const response = await fetch(baseURL + "login", options).then(
+  const response = await fetch(secondURL + "login", options).then(
     convertToJson
   );
   return response.accessToken;
@@ -65,7 +65,7 @@ async getOrders(token) {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await fetch(baseURL + "orders", options).then(
+    const response = await fetch(secondURL + "orders", options).then(
       convertToJson
     );
     return response;
