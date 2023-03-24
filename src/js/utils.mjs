@@ -100,6 +100,16 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerElement, cartTotalQuantity//, renderCartSuperscript//
   );
   renderWithTemplate(footerTemplate, footerElement);
+
+ //toggle Menu - Order Now button --- Natalia
+  function toggleMenu() {
+    document.getElementById("primaryNav").classList.toggle("open");
+    document.getElementById("hamButton").classList.toggle("open");
+  }
+  const x = document.getElementById("hamButton");
+   x.onclick = toggleMenu;
+
+
 }
 
 export function alertMessage(message, scroll=true, duration = 3000) {

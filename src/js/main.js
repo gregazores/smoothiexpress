@@ -8,7 +8,7 @@ loadHeaderFooter();
 //     document.getElementById("hamButton").classList.toggle("open");
 //   }
 //   const x = document.getElementById("hamButton");
-//   x.onclick = toggleMenu;
+//    x.onclick = toggleMenu;
   
   /*Last Modified */
 //   document.querySelector("#year").textContent = new Date().getFullYear();
