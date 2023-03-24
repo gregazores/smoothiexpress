@@ -20,11 +20,11 @@
 
     /* Hamburger Button Styling */
 
-    nav ul {
+    /* nav ul {
         display: flex;
-    }
+    } */
 
-    nav ul li a {
+    /* nav ul li a {
         padding: 1.2rem 5rem;
     }
 
@@ -33,16 +33,16 @@
     }
 
     nav ul.open {
-        display: flex;
-    }
+        display: block;
+    } */
 
-    nav button {
+    /* nav button {
         display: none;
-    }
+    } */
 
-    nav ul li {
+    /* nav ul li {
         font-size: 1rem;
-    }
+    } */
 
     /* Footer Styling */
 
