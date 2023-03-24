@@ -109,7 +109,9 @@ export async function loadHeaderFooter() {
   const x = document.getElementById("hamButton");
    x.onclick = toggleMenu;
 
-
+  /*Last Modified */
+//   document.querySelector("#year").textContent = new Date().getFullYear();
+//   document.querySelector("#lastupdated").textContent = document.lastModified;
 }
 
 export function alertMessage(message, scroll=true, duration = 3000) {
