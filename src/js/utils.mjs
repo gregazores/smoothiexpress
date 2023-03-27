@@ -14,12 +14,21 @@ export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-// helper to get parameter strings
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
   return product;
+}
+
+// helper to get the key-value pair of the url or search query
+export function getKeyValue() {
+///export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  //console.log(urlParams.get(param))
+  const queryParameters = urlParams.toString().split("=");
+  return queryParameters;
 }
 
 // set a listener for both touchend and click
@@ -46,13 +55,13 @@ export function renderListWithTemplate(
   parentElement.insertAdjacentHTML(position, htmlStrings.join(''));
 }
 
-// export function renderCartSuperscript(data) {
-  // const cartSuperscript = document.querySelector("header .cart");
-  // cartSuperscript.style.cssText = `--item : '${data}';`
-  //superscriptContainer.innerHTML = `${data}`;
-  //superscriptContainer.setAttribute('data-product-count', data);
-  //cartElement.style.cssText = `--item : '${data}';`
-// }
+export function renderCartSuperscript(data) {
+  const cartSuperscript = document.querySelector("header .basket-icon");
+  cartSuperscript.style.cssText = `--item : '${data}';`
+  // superscriptContainer.innerHTML = `${data}`;
+  // superscriptContainer.setAttribute('data-product-count', data);
+  // cartElement.style.cssText = `--item : '${data}';`
+}
  
 export function renderWithTemplate(
   template,
@@ -146,3 +155,5 @@ export function removeAllAlerts() {
   const alerts = document.querySelectorAll(".alert");
   alerts.forEach((alert) => document.querySelector("main").removeChild(alert));
 }
+
+

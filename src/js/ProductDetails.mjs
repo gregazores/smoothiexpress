@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from '../js/utils.mjs';
+import { getLocalStorage, setLocalStorage, returnCartTotalQuantities, renderCartSuperscript} from '../js/utils.mjs';
 
 function productDetailsTemplate(product, baseURL) {
   let discountPercent = 10
@@ -49,7 +49,6 @@ export default class ProductDetails {
 
     //Manually set the breadcrumbs -Greg
     const breadcrumbsHome = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.home');
-    console.log(window.location.hostname)
     breadcrumbsHome.innerHTML =`<a href="/">Home</a>`;
 
     const breadcrumbsCategory = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.category');
@@ -92,13 +91,46 @@ export default class ProductDetails {
       Data.push(this.product);
     }
     setLocalStorage('so-cart', Data);
+    flyToCart()
   }
   renderProductDetails(selector) {
     const element = document.querySelector(selector);
-    console.log("this.product", this.product)
     element.insertAdjacentHTML(
       "afterBegin",
       productDetailsTemplate(this.product, this.dataSource.baseURL)
     );
   }
+
+}
+
+
+
+function flyToCart() {
+  const cartElement = document.querySelector('.basket-icon');
+  const productImg = document.querySelector('.product-image > picture > img');
+  const boundingCart = cartElement.getBoundingClientRect();
+  const boundingImage = productImg.getBoundingClientRect();
+  const xDistance = boundingCart.left - boundingImage.left;
+  const yDistance = boundingImage.top - boundingCart.top;
+  //const cartQuantity = returnCartItems(['so-cart', 'do-cart']).length;
+
+  //clone the image
+  const imageClone = productImg.cloneNode();
+  imageClone.classList.add('flying-img');
+  cartElement.appendChild(imageClone);
+  cartElement.classList.add('shake');
+  //set var
+  imageClone.style.cssText = `
+    --width : ${boundingImage.width.toFixed(2)}px;
+    --left : -${xDistance.toFixed(2)}px;
+    --top : ${yDistance.toFixed(2)}px;
+  `;
+
+  setTimeout(() => {
+    cartElement.removeChild(imageClone);
+    cartElement.classList.remove('shake');
+    renderCartSuperscript(returnCartTotalQuantities('so-cart'));
+    //renderCartSuperscript(cartQuantity)
+}, 2000);
+
 }
