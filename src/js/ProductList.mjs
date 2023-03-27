@@ -1,6 +1,6 @@
 import { renderListWithTemplate } from './utils.mjs';
 
-function productCardTemplate(product, baseURL, category) {
+function productCardTemplate(product, baseURL) {
 
     //computing the discount in amount and percentage -GREG
     let discountPercent = 10
@@ -9,7 +9,7 @@ function productCardTemplate(product, baseURL, category) {
     // I have also included the discount details in the template -GREG
     return `
         <li class="product-card">
-            <a href="/product_pages/index.html?product=${product._id}&category=${category}">
+            <a href="/product_pages/index.html?product=${product._id}&category=${product.category}">
                 <img src="	${baseURL}/${product.image}" width="500" alt="Image of ${product.alt}" />
                 <h2 class="card__name">${product.name}</h2>
                 <p class="product-card__price"><strong>$${discountDollars.toFixed(2)}</strong> &nbsp; <span class="disc-ind">-${discountPercent}%
@@ -57,24 +57,72 @@ export default class ProductList {
       const modalContainer = document.querySelector('.product-detail.quick-view .product-detail-wrapper')
       // our dataSource will return a Promise...so we can use await to resolve it.
       //const list = await this.dataSource.getData();
-      const list = await this.dataSource.getData(this.category);
-      // render the list 
-      this.renderList(list);
+
 
       //Manually set the breadcrumbs -Greg
       const breadcrumbsHome = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.home');
       breadcrumbsHome.innerHTML = `<a href="/">Home</a>`;
       const breadcrumbsCategory = document.querySelector('.breadcrumbs-container .breadcrumbs-ul .breadcrumbs-li.category');
-      breadcrumbsCategory.innerHTML = `${this.category.charAt(0).toUpperCase() + this.category.slice(1)} (${list.length} items)`;
+      const productHeader = document.querySelector('.products > h2');
+      
 
-    //   //add event listener to quick view buttons
-      this.addQuickViewListener(list, modalContainer);
-    }
+      if(this.category[0] == 'category') {
+          let list
+
+          //Change the header based on the category
+          productHeader.innerHTML = `Category: ${this.category[1].charAt(0).toUpperCase() + this.category[1].slice(1)}`
+
+          list = await this.dataSource.getData(this.category[1]);
+          breadcrumbsCategory.innerHTML = `${this.category[1].charAt(0).toUpperCase() + this.category[1].slice(1)} (${list.length} items)`;
+          // render the list 
+          this.renderList(list);
+          //   //add event listener to quick view buttons
+          this.addQuickViewListener(list, modalContainer);
+        }
+
+        if(this.category[0] == 'search') {
+          let categories = ['balanced-fusions', 'fruit-blend', 'super-veggies']
+          let sanitizedKeyword = this.category[1].replace('+', ' ')
+
+          breadcrumbsCategory.innerHTML = `Search Results: ${sanitizedKeyword.charAt(0).toUpperCase() + sanitizedKeyword.slice(1)}`
+
+          let list = []
+          let counter = 0
+
+          categories.forEach(async category => {
+            
+            let temps = await this.dataSource.getData(category);
+            temps = temps.filter((x) => {
+              // console.log('x', x)
+              if (x.name.toLowerCase().includes(sanitizedKeyword.toLowerCase()) 
+                || x.alt.toLowerCase().includes(sanitizedKeyword.toLowerCase()) 
+                || x.category.toLowerCase().includes(sanitizedKeyword.toLowerCase()) ) {
+                return x
+              }
+            })
+            list = list.concat(temps)
+            
+            counter = counter + 1
+            if (counter == 3) {
+              if(list.length) {
+                console.log('list', list)
+                productHeader.innerHTML = `Search Results: ${sanitizedKeyword.charAt(0).toUpperCase() + sanitizedKeyword.slice(1)}`
+                this.renderList(list);
+                this.addQuickViewListener(list, modalContainer);
+              } else {
+                productHeader.innerHTML = `0 search results`
+              }
+            }
+          })  
+
+        }
+
+      }
 
     renderList(list) {
         // renderListWithTemplate(productCardTemplate, this.listElement, list);
         renderListWithTemplate((product) => {
-            return productCardTemplate(product, this.dataSource.baseURL, this.category)
+            return productCardTemplate(product, this.dataSource.baseURL)
         }, this.listElement, list);
     }//productCardTemplate: The template function we will use is hard coded
 
