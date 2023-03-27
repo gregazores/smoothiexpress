@@ -106,8 +106,7 @@ export async function loadHeaderFooter() {
   const cartTotalQuantity = returnCartTotalQuantities('so-cart');
   //const cartQuantity = returnCartItems(['so-cart']).length;
 
-  renderWithTemplate(headerTemplate, headerElement, cartTotalQuantity//, renderCartSuperscript//
-  );
+  renderWithTemplate(headerTemplate, headerElement, cartTotalQuantity, renderCartSuperscript);
   renderWithTemplate(footerTemplate, footerElement);
 
  //toggle Menu - Order Now button --- Natalia
