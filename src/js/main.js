@@ -1,5 +1,5 @@
-
 import { loadHeaderFooter, getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { doc } from 'prettier';
 
 loadHeaderFooter();
   
