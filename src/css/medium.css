@@ -72,7 +72,12 @@
     section.welcome img {
         width: 50%;
         float: right;
-        padding: 2rem;
+        padding: 1rem; 
+    }
+
+    section.welcome p, 
+    .textMessage {
+        padding: 50px;
     }
 
     section.message1, .message2 {

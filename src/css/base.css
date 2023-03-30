@@ -248,6 +248,23 @@ main.mainContent {
     grid-template-columns: 1fr;
 }
 
+/* Rewards program modal --- Natalia */
+.modal {
+    padding: 1em;
+    /* max-width: 60ch; */
+    text-align: center;
+    
+  }
+  .modal::backdrop {
+    background: rgb(0 0 0 / .5);
+  }
+  .close-modal {
+   position: absolute;
+   top: 0px;
+   right: 5px;
+   padding: 0.3em;
+  }
+/* End of Rewards program modal --- Natalia */
 /* main.mainContent img {
     width: 50%;
 } */
