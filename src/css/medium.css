@@ -103,10 +103,6 @@
         width: 80%;
     }
 
-    /* section.message1 div {
-        margin: 0 2rem;
-    } */
-
     .smoothies {
         grid-column: 1/-1;
         display: flex;
@@ -133,9 +129,8 @@
     }
 
     /*---ABOUT PAGE ----*/
-    .about{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .aboutSX{
+        margin: 0 100px;
     }
     
 
