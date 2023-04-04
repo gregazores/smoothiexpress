@@ -364,13 +364,8 @@ form legend {
 
 #checkoutSubmit {
     border: none;
-    background-color: var(--secundary);
-    color: white;
-    border-radius: 1rem;
-    padding: .75rem 1.5rem;
     width: 50%;
     max-width: 200rem;
-    margin: 0 10vw;
 }
 
 
@@ -842,8 +837,9 @@ text-decoration: none;
   }
 
   #checkoutSubmit {
+    display: block;
     border-width: 0;
-    margin: 30px 0 30px 33px;
+    margin: 30px auto 30px auto;
   }
   /* end of checkout styles -- NATALIA */
 
