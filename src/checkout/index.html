@@ -35,28 +35,22 @@
       
       <section class="checkout-form">
 
-        <form method="post" name="checkout">
+        <form method="post" name="checkout" id="checkout-form">
           <fieldset>
             <legend>Your Information</legend>
             <label for="fname">Name</label>
             <input type="text" id="fname" name="fname" value="John" required>
-            <!-- <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" value="Doe" required>
-            <label for="street">Street</label>
-            <input type="text" id="street" name="street" value="2110 District Ave" required>
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" value="Stuart" required> -->
-            <label for="telephone">Phone Number</label>
+            <label for="phone">Phone Number</label>
             <input type="text" id="phone" name="phone" value= "772-558-7111" required>
             <label for="email">Email</label>
             <input type="text" id="email" name="email" value="user@user.com" required>
           </fieldset>
           <fieldset>
             <legend>Payment</legend>
-            <label for="cardNumber">Card number</label>
-            <input type="text" id="ccnum" name= "cardNumber" minlength="16" maxlength="16" value="1234123412341234" required>
-            <label for="expiration">Expiration</label>
-            <input type="text" id="expdate" name="expiration" required>
+            <label for="ccnum">Card number</label>
+            <input type="text" id="ccnum" name= "ccnum" minlength="16" maxlength="16" value="1234123412341234" required>
+            <label for="eexpdate">Expiration</label>
+            <input type="text" id="expdate" name="expdate" required>
             <label for="code">Security Code</label>
             <input type="text" id="code" name="code" minlength="3" maxlength="4" required>
           </fieldset>

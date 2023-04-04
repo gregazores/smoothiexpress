@@ -3,6 +3,8 @@ const secondURL = 'https://wdd330-backend.onrender.com/'
 // const baseURL = "https://wdd330-backend.vercel.app/";
 // export const baseURL = 'https://smoothiexpress-api.onrender.com'
 // const baseURL = 'http://localhost:8000'
+const mongooseURL = 'https://wdd341-smoothie-mongoose.onrender.com'
+const x = "http://localhost:3000"
 
 
 async function convertToJson(res) {
@@ -16,7 +18,7 @@ async function convertToJson(res) {
 
 export default class ExternalServices {
   constructor(category) {
-    this.baseURL = 'https://smoothiexpress-api.onrender.com'
+    this.baseURL = mongooseURL
   }
   async getData(category) {
     const response = await fetch(this.baseURL + `/${category}`);
@@ -29,6 +31,7 @@ export default class ExternalServices {
     return data;
   }
   async checkout(payload) {
+    console.log('payload', payload)
     const options = {
       method: "POST",
       headers: {
@@ -36,7 +39,9 @@ export default class ExternalServices {
       },
       body: JSON.stringify(payload),
     };
-    return await fetch(secondURL + "checkout/", options).then(convertToJson);
+
+    console.log('body', options)
+    return await fetch(mongooseURL + "/checkout", options).then(convertToJson);
   }
 
 
