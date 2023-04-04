@@ -735,7 +735,8 @@ text-decoration: none;
   }
 
   #checkoutSubmit,
-  .list-footer > a {
+  .list-footer > a,
+  #login-button {
     /* display: block; */
     font-size: 1.7em;
     padding: 0.3em 0.5em;
@@ -836,10 +837,11 @@ text-decoration: none;
     font-size: 1em;
   }
 
-  #checkoutSubmit {
+  #checkoutSubmit,
+  #login-button {
     display: block;
     border-width: 0;
-    margin: 30px auto 30px auto;
+    margin: 30px auto ;
   }
   /* end of checkout styles -- NATALIA */
 
@@ -853,6 +855,10 @@ text-decoration: none;
 
 #login, #logout {
   text-decoration: none;
+}
+
+#login-button {
+  margin: 10px auto;
 }
 
 
