@@ -83,18 +83,6 @@
     section.message1 div {
         padding: 0 5rem;
     }
-
-    /* .smoothies {
-        display: grid;
-        grid-column: 1/4;
-    } */
-
-    /* .masterpiece {
-        display: grid;
-        grid-column: 4/5;
-        padding: 0 2rem;
-    } */
-
       
     .social {
         grid-column: 1/-1;

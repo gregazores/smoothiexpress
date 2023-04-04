@@ -5,7 +5,7 @@
     }
 
     h2, h3, h4, p {
-        font-size: .8em;
+        font-size: .9em;
     }
 
 
@@ -19,6 +19,9 @@
 
     nav button {
         font-size: 1.5rem;
+        padding: 1px 25px;
+        margin-top: 0px;
+        margin-right: 0px;
     }
 
     /* nav ul.open {
@@ -60,7 +63,6 @@
     section.welcome {
         grid-column: 1/-1;
         padding: 0 2rem;
-
     }
 
     .button1 {
@@ -69,18 +71,23 @@
         padding: .5rem 1.5rem;
     }
 
+    .photo1 {
+        display: contents;
+    }
+
     section.welcome img {
-        width: 50%;
+        width: 30%;
         float: right;
         padding: 1rem; 
     }
+
 
     section.welcome p, 
     .textMessage {
         padding: 50px;
     }
 
-    section.message1, .message2 {
+    section.message1, section.message2 {
         grid-column: 1/-1;
         text-align: center;
         display: flex;
@@ -89,13 +96,12 @@
         margin: .5rem;
     }
 
-    .img3 {
+    .message1 img {
         width: 80%;
     }
-
-    /* section.message1 div {
-        margin: 0 2rem;
-    } */
+    .message2 img {
+        width: 80%;
+    }
 
     .smoothies {
         grid-column: 1/-1;
@@ -123,9 +129,8 @@
     }
 
     /*---ABOUT PAGE ----*/
-    .about{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .aboutSX{
+        margin: 0 100px;
     }
     
 
