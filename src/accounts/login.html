@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Smoothie Xpress | Checkout</title>
+    <title>Smoothie Xpress | Login</title>
 
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -42,11 +42,18 @@
             <input type="text" id="email" name="email" placeholder="name@email.com" required>
             
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+            <p>Password must be at least 8 characters and has at least 1 uppercase character, 1 number and 1 special character</p>
             <button id="login-button" type="submit">Login</button>
           </fieldset>
 
         </form>
+
+        <div class="registration-btn-container">
+            <a class="create-account" href="../accounts/registration.html">Create an account</a>
+            <a class="login-google" href="#">Login with Google</a>
+
+        </div>
 
       </section>
 
@@ -55,7 +62,7 @@
     <footer id="main-footer">
 
     </footer>
-    <script src="../js/login.js" type="module"></script>
+    <script src="../js/register.js" type="module"></script>
   </body>
 
 </html>
