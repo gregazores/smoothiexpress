@@ -72,6 +72,7 @@ html {
     box-sizing: border-box;
 }
 
+#login, #logout,
 nav button {
     background:var(--secundary);
     border: .5rem solid var(--secundary);
@@ -404,7 +405,6 @@ form legend {
 /* Product Search Styling Start -Greg  */
 header .search-bar {
     white-space: nowrap;
-    margin: 20px 0px 0 auto;
     border: 2px solid var(--primary);
     border-radius: 5px;
     position: relative;
@@ -738,6 +738,8 @@ text-decoration: none;
     padding: 0 0.5em;
     margin-bottom: 40px;
   }
+
+  #checkoutSubmit,
   .list-footer > a {
     /* display: block; */
     font-size: 1.7em;
@@ -838,9 +840,28 @@ text-decoration: none;
     width: 25%;
     font-size: 1em;
   }
+
+  #checkoutSubmit {
+    border-width: 0;
+    margin: 30px 0 30px 33px;
+  }
   /* end of checkout styles -- NATALIA */
 
+ /* Login Logout Styles Start -- Greg */
+ .bottom-header {
+   margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
 
+#login, #logout {
+  text-decoration: none;
+}
+
+
+
+ /* Login Logout Styles End -- Greg */
 
 
 
