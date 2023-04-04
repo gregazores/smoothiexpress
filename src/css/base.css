@@ -375,36 +375,20 @@ form legend {
 
 /*---ABOUT PAGE ----*/
 
-.about {
-    display: block;
+.aboutTitle, .aboutSX {
+  text-align: center;
 }
 
-.aboutBF{
-    padding: .5rem 1.5rem;
+.aboutSX{  
+  padding: .5rem 1.5rem;
 }
 
-.aboutBF img{
-    width: 100%;
+.aboutSX img{
+    width: 50%;
 }
 
-.inquiryBtn {
-    /* display: flex; */
-    text-align: center;
-    border: none;
-    background-color: var(--secundary);
-    color: white;
-    border-radius: 1rem;
-    padding: .75rem 2rem;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-    
-}
 
-iframe {
-	width: 100%;
-    padding: 0 .5rem;
-    border: none;
-}
+
 
 
 /*---THANK YOU PAGE ----*/
