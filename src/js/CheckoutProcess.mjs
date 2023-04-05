@@ -145,6 +145,10 @@ export default class CheckoutProcess {
         if(err.message == "Sorry you must be logged in! No authorization") {
           alertMessage(`Sorry you must be logged in! Click <a href="../accounts/login.html">Here</a>`)
         }
+
+        else {
+          alertMessage(err.message)
+        }
   
         console.log(err);
 
