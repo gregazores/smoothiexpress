@@ -37,9 +37,9 @@
 
         <form method="post" name="login" id="login-form">
           <fieldset>
-            <legend>Your Information</legend>
-            <label for="email">email</label>
-            <input type="text" id="email" name="email" placeholder="name@email.com" required>
+            <legend>Your Login Information</legend>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
             
             <label for="password">Password</label>
             <input type="password" id="password" name="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
@@ -51,7 +51,7 @@
 
         <div class="registration-btn-container">
             <a class="create-account" href="../accounts/registration.html">Create an account</a>
-            <a class="login-google" href="#">Login with Google</a>
+            <a class="login-google" href="https://wdd341-smoothie-mongoose.onrender.com/users/auth/google">Login with Google</a>
 
         </div>
 
@@ -62,7 +62,7 @@
     <footer id="main-footer">
 
     </footer>
-    <script src="../js/register.js" type="module"></script>
+    <script src="../js/login.js" type="module"></script>
   </body>
 
 </html>

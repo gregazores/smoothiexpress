@@ -678,6 +678,7 @@ text-decoration: none;
   /* alert styles */
   .alert {
     display: flex;
+    margin-top: 40px;
     align-items: center;
     justify-content: space-between;
     padding: 0.5em;
