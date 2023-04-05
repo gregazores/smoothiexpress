@@ -32,48 +32,23 @@ function packageItems(items) {
     return simplifiedItems;
   }
 
-export default class CheckoutProcess {
-    constructor(key, outputSelector) {
-      this.key = key;
-      this.outputSelector = outputSelector;
+export default class AccountProcess {
+    constructor() {
       this.list = [];
       this.itemTotal = 0;
       this.shipping = 0;
       this.tax = 0;
       this.orderTotal = 0;
     }
-    init() {
-      //if local storage is empty, give an empty array instead. this is to prevent error
-      //because this.list is expecting an array
-      this.list = getLocalStorage(this.key) || [];
+    
+    async init() {
 
-      if(this.list.length == 0) {
-        document.querySelector('#checkout-form').innerHTML = "<h2>It looks like you forgot to place an order. Click (<a href='/product-listing/index.html?search='>here</a>) for our full menu</h2>"
+      const user = getLocalStorage('user')
+      if(user) {
+        const orders = await services.getOrders(user);
+        console.log('orders', orders)
       }
-
-      if(this.list.length && document.querySelector('#checkout-form')){
-          this.calculateItemSummary();
-
-          document
-            .querySelector("#email")
-              .addEventListener("blur", this.calculateOrdertotal.bind(this));
-          // listening for click on the button
-          document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
-            e.preventDefault();
-            var myForm = document.forms["checkout"];
-
-            //Forms have a method called checkValidity that will return false 
-            //if it finds anything in the form data that goes against our validation rules.
-            var chk_status = myForm.checkValidity();
-            //We can also manually trigger the messages that 
-            //the browser will add to the page when something is wrong.
-            myForm.reportValidity();
-
-            if(chk_status) this.checkout(myForm);
-          });
-
-      }
-
+      
 
 
     }
@@ -133,7 +108,6 @@ export default class CheckoutProcess {
       json.tax = this.tax;
       json.shipping = this.shipping;
       json.items = packageItems(this.list);
-      json.user = getLocalStorage('user');
       console.log('checkout CheckoutProcess',json);
       try {
         const res = await services.checkout(json);
