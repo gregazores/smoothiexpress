@@ -18,7 +18,7 @@ async function convertToJson(res) {
 
 export default class ExternalServices {
   constructor(category) {
-    this.baseURL = x
+    this.baseURL = mongooseURL
   }
   async getData(category) {
     const options = {
