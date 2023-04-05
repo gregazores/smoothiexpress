@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Smoothie Xpress | Registration</title>
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/medium.css" rel="stylesheet">
+    <link href="../css/large.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <header id="main-header">
+
+    </header>
+
+    <main class="divider login">
+      
+      <h2>Registration Page</h2>
+      
+      <section class="checkout-form">
+
+        <form method="post" name="login" id="login-form">
+          <fieldset>
+            <legend>Your Information</legend>
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">email</label>
+            <input type="text" id="email" name="email" placeholder="name@email.com" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+            <p>Password must be at least 8 characters and has at least 1 uppercase character, 1 number and 1 special character</p>
+            <button id="login-button" type="submit">Login</button>
+          </fieldset>
+
+        </form>
+
+        <div class="registration-btn-container">
+            <a class="login-google" href="https://wdd341-smoothie-mongoose.onrender.com/users/auth/google">Login with Google</a>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer id="main-footer">
+
+    </footer>
+    <script src="../js/login.js" type="module"></script>
+  </body>
+
+</html>
+

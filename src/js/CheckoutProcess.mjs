@@ -1,19 +1,20 @@
-import { getLocalStorage, returnCartTotalQuantities, alertMessage, removeAllAlerts, setLocalStorage} from "./utils.mjs";
+import { getLocalStorage, returnCartTotalQuantities, alertMessage, removeAllAlerts, setLocalStorage, formDataToJSON} from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 
 const services = new ExternalServices();
 
 // takes a form element and returns an object where the key is the "name" of the form input.
-function formDataToJSON(formElement) {
-  const formData = new FormData(formElement),
-    convertedJSON = {};
+//transferring this to utils since I will use this on login process
+// function formDataToJSON(formElement) {
+//   const formData = new FormData(formElement),
+//     convertedJSON = {};
 
-  formData.forEach(function (value, key) {
-    convertedJSON[key] = value;
-  });
+//   formData.forEach(function (value, key) {
+//     convertedJSON[key] = value;
+//   });
 
-  return convertedJSON;
-}
+//   return convertedJSON;
+// }
 
 function packageItems(items) {
     const simplifiedItems = items.map((item) => {
@@ -60,12 +61,15 @@ export default class CheckoutProcess {
           document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
             e.preventDefault();
             var myForm = document.forms["checkout"];
-            console.log("myForm", myForm)
+
+            //Forms have a method called checkValidity that will return false 
+            //if it finds anything in the form data that goes against our validation rules.
             var chk_status = myForm.checkValidity();
+            //We can also manually trigger the messages that 
+            //the browser will add to the page when something is wrong.
             myForm.reportValidity();
-            console.log("chk_status", chk_status)
-            console.log("myForm.reportValidity()", myForm.reportValidity())
-            if(chk_status) this.checkout();
+
+            if(chk_status) this.checkout(myForm);
           });
 
       }
@@ -119,8 +123,9 @@ export default class CheckoutProcess {
       orderTotal.innerText = "$" + this.orderTotal;
       
     }
-    async checkout() {
-      const formElement = document.forms["checkout"];
+    async checkout(myForm) {
+      //const formElement = document.forms["checkout"];
+      const formElement = myForm;
       const json = formDataToJSON(formElement);
       // add totals, and item details
       json.orderDate = new Date();
@@ -135,12 +140,13 @@ export default class CheckoutProcess {
         setLocalStorage("so-cart", []);
         //location.assign("/checkout/success.html");
       } catch (err) {
-        // removeAllAlerts();
-        // const jsonResponse = await err.message; 
-        // for (let message in jsonResponse) {
-        //   alertMessage(jsonResponse[message]);
-        //   console.log(jsonResponse[message])
-        //}
+        // get rid of any preexisting alerts.
+        removeAllAlerts();
+        const jsonResponse = await err.message; 
+        for (let message in jsonResponse) {
+          alertMessage(jsonResponse[message]);
+          console.log(jsonResponse[message])
+        }
   
         console.log("error erro");
       }

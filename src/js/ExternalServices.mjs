@@ -53,10 +53,10 @@ async loginRequest(user) {
     },
     body: JSON.stringify(user),
   };
-  const response = await fetch(secondURL + "login", options).then(
+  const response = await fetch(mongooseURL + "/users/login/", options).then(
     convertToJson
   );
-  return response.accessToken;
+  return response;
 }
 
  // make a request to the server for the current orders
@@ -75,4 +75,5 @@ async getOrders(token) {
     );
     return response;
   }
+
 }
