@@ -45,6 +45,7 @@ export default class ExternalServices {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(payload),
     };
 
@@ -69,18 +70,91 @@ async loginRequest(user) {
   return response;
 }
 
+async registerRequest (user) {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+    credentials: "include",
+    body: JSON.stringify(user),
+  };
+  const response = await fetch(this.baseURL + "/users/register/", options).then(
+    convertToJson
+  );
+  return response;
+}
+
  // make a request to the server for the current orders
   // requires: a valid token
   // returns: a list of orders
-async getOrders(token) {
+async getOrders(user) {
+    // const options = {
+    //   method: "GET",
+    //   // the server will reject our request if we don't include the Authorization header with a valid token!
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    // };
+
     const options = {
       method: "GET",
-      // the server will reject our request if we don't include the Authorization header with a valid token!
       headers: {
-        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
+      // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+      credentials: "include"
     };
-    const response = await fetch(this.baseURL + "orders", options).then(
+    try {
+
+      const response = await fetch(this.baseURL + `/orders/${user}`, options).then(
+        convertToJson
+      );
+      return response;
+      
+    } catch (error) {
+        console.log(error)
+    }
+
+  }
+
+
+  async logout() {
+
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+      credentials: "include"
+    };
+    try {
+
+      const response = await fetch(this.baseURL + "/users/logout/", options).then(
+        convertToJson
+      );
+      return response;
+      
+    } catch (error) {
+        console.log(error)
+    }
+
+  }
+
+
+
+  async amILoggedIn(params) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+      credentials: "include"
+    };
+    const response = await fetch(this.baseURL + "/users/protected/", options).then(
       convertToJson
     );
     return response;

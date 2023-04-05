@@ -400,7 +400,7 @@ form legend {
 }
 
 /* Product Search Styling Start -Greg  */
-header .search-bar {
+.bottom-header .search-bar {
     white-space: nowrap;
     border: 2px solid var(--primary);
     border-radius: 5px;
@@ -409,7 +409,7 @@ header .search-bar {
   }
   
   
-  header .search-bar__input {
+  .bottom-header .search-bar__input {
     background: transparent;
     width: 100%;
     border: 2px solid white;
@@ -419,7 +419,7 @@ header .search-bar {
     outline: none;
   }
   
-  header .search-bar__submit {
+  .bottom-header .search-bar__submit {
     background: transparent;
     border: 0;
   }
@@ -749,7 +749,7 @@ text-decoration: none;
     color: #ffff !important;
   }
   
-  .list-footer.hide a {
+  .cart-cart-section.cart-section .list-footer.hide a {
     visibility: hidden;
   }
   
@@ -889,10 +889,16 @@ text-decoration: none;
 }
 
 
-
-
-
  /* Login Logout Styles End -- Greg */
+
+
+  /* Account Styles Start -- Greg */
+  .account-section .product-list-order-wrapper .order-number {
+    margin-top: 50px;
+    padding: 20px 20px;
+    background-color: #85bd30;
+    font-size: 1.5rem;
+  }
 
 
 

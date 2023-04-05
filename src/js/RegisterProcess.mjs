@@ -3,16 +3,16 @@ import ExternalServices from "./ExternalServices.mjs";
 
 const extservices = new ExternalServices();
 
-export default class LoginProcess {
+export default class RegisterProcess {
     constructor() {
 
       }
 
       init() {
 
-            document.querySelector("#login-button").addEventListener("click", (e) => {
+            document.querySelector("#register-button").addEventListener("click", (e) => {
                 e.preventDefault();
-                var myForm = document.forms["login"];
+                var myForm = document.forms["register"];
 
                 //Forms have a method called checkValidity that will return false 
                 //if it finds anything in the form data that goes against our validation rules.
@@ -32,7 +32,7 @@ export default class LoginProcess {
             console.log('login formElement json', usercreds)
 
             try {
-                const resp = await extservices.loginRequest(usercreds);
+                const resp = await extservices.registerRequest(usercreds);
                 location.assign("/accounts/account.html");
                 setLocalStorage('user', resp)
             } catch (err) {

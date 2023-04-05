@@ -26,7 +26,7 @@ function packageItems(items) {
         image: item.image,
         name: item.name,
         price: item.price,
-        quantity: 1,
+        quantity: item.quantity,
       };
     });
     return simplifiedItems;
@@ -133,6 +133,7 @@ export default class CheckoutProcess {
       json.tax = this.tax;
       json.shipping = this.shipping;
       json.items = packageItems(this.list);
+      json.user = getLocalStorage('user');
       console.log('checkout CheckoutProcess',json);
       try {
         const res = await services.checkout(json);
