@@ -142,13 +142,12 @@ export default class CheckoutProcess {
       } catch (err) {
         // get rid of any preexisting alerts.
         removeAllAlerts();
-        const jsonResponse = await err.message; 
-        for (let message in jsonResponse) {
-          alertMessage(jsonResponse[message]);
-          console.log(jsonResponse[message])
+        if(err.message == "Sorry you must be logged in! No authorization") {
+          alertMessage(`Sorry you must be logged in! Click <a href="../accounts/login.html">Here</a>`)
         }
   
-        console.log("error erro");
+        console.log(err);
+
       }
     }
   }

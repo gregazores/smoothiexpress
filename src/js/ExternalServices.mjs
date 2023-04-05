@@ -18,10 +18,18 @@ async function convertToJson(res) {
 
 export default class ExternalServices {
   constructor(category) {
-    this.baseURL = mongooseURL
+    this.baseURL = x
   }
   async getData(category) {
-    const response = await fetch(this.baseURL + `/${category}`);
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+      credentials: "include"
+    };
+    const response = await fetch(this.baseURL + `/${category}`, options);
     const data = await convertToJson(response);
     return data;
   }
@@ -41,7 +49,7 @@ export default class ExternalServices {
     };
 
     console.log('body', options)
-    return await fetch(mongooseURL + "/checkout", options).then(convertToJson);
+    return await fetch(this.baseURL + "/checkout", options).then(convertToJson);
   }
 
 
@@ -51,9 +59,11 @@ async loginRequest(user) {
     headers: {
       "Content-Type": "application/json",
     },
+    // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+    credentials: "include",
     body: JSON.stringify(user),
   };
-  const response = await fetch(mongooseURL + "/users/login/", options).then(
+  const response = await fetch(this.baseURL + "/users/login/", options).then(
     convertToJson
   );
   return response;
@@ -70,7 +80,7 @@ async getOrders(token) {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await fetch(secondURL + "orders", options).then(
+    const response = await fetch(this.baseURL + "orders", options).then(
       convertToJson
     );
     return response;

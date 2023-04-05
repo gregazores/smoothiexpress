@@ -74,6 +74,7 @@ html {
 
 #login, #logout,
 nav button,
+.registration-btn-container button,
 .registration-btn-container a {
     background:var(--secundary);
     border: .5rem solid var(--secundary);
@@ -857,6 +858,11 @@ text-decoration: none;
 
 #login, #logout {
   text-decoration: none;
+}
+
+#logout,
+.registration-btn-container .login-google {
+  margin-top: 0;
 }
 
 #login-button {
