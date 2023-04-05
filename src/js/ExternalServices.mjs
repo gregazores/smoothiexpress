@@ -106,7 +106,55 @@ async getOrders(user) {
       // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
       credentials: "include"
     };
-    const response = await fetch(this.baseURL + `/orders/${user}`, options).then(
+    try {
+
+      const response = await fetch(this.baseURL + `/orders/${user}`, options).then(
+        convertToJson
+      );
+      return response;
+      
+    } catch (error) {
+        console.log(error)
+    }
+
+  }
+
+
+  async logout() {
+
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+      credentials: "include"
+    };
+    try {
+
+      const response = await fetch(this.baseURL + "/users/logout/", options).then(
+        convertToJson
+      );
+      return response;
+      
+    } catch (error) {
+        console.log(error)
+    }
+
+  }
+
+
+
+  async amILoggedIn(params) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // in the server, 'Access-Control-Allow-Credentials', 'true' for credentials: "include", to work
+      credentials: "include"
+    };
+    const response = await fetch(this.baseURL + "/users/protected/", options).then(
       convertToJson
     );
     return response;

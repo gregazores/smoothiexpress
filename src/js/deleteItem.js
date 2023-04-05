@@ -16,7 +16,9 @@ if (remove.length > 0) {
         deleteProduct(item);
     });
     })
-} else {
+}
+
+if (remove.length == 0) {
     //if no X (length=0), display a message
     document.querySelector(".list-total").textContent = "Your cart is empty";
 }

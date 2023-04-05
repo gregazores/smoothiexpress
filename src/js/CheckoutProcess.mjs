@@ -26,7 +26,7 @@ function packageItems(items) {
         image: item.image,
         name: item.name,
         price: item.price,
-        quantity: 1,
+        quantity: item.quantity,
       };
     });
     return simplifiedItems;
