@@ -33,8 +33,7 @@ export default class LoginProcess {
 
             try {
                 const resp = await extservices.loginRequest(usercreds);
-                console.log('returned response',resp);
-                //location.assign("/accounts/account.html");
+                location.assign("/accounts/account.html");
             } catch (err) {
                 // get rid of any preexisting alerts.
                 removeAllAlerts();
